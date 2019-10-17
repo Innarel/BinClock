@@ -18,7 +18,15 @@ type
     ToggleBox10: TToggleBox;
     ToggleBox11: TToggleBox;
     ToggleBox12: TToggleBox;
+    ToggleBox13: TToggleBox;
+    ToggleBox14: TToggleBox;
+    ToggleBox15: TToggleBox;
+    ToggleBox16: TToggleBox;
+    ToggleBox17: TToggleBox;
+    ToggleBox18: TToggleBox;
+    ToggleBox19: TToggleBox;
     ToggleBox2: TToggleBox;
+    ToggleBox20: TToggleBox;
     ToggleBox3: TToggleBox;
     ToggleBox4: TToggleBox;
     ToggleBox5: TToggleBox;
@@ -63,7 +71,7 @@ procedure TForm1.Timer1Timer(Sender: TObject);
 var
   hora, minuto, segundo, mili: word;
   i: integer;
-  hstr, minstr: string;
+  hstr, minstr, secstr: string;
 begin
   DecodeTime(time, hora, minuto, segundo, mili);
 
@@ -142,6 +150,58 @@ begin
   if minstr[4] = '1' then
     ToggleBox12.Checked:=true else
     ToggleBox12.Checked:=false;
+
+  // Processa Segundo 1
+
+  if segundo < 9 then
+    secstr := '0' + inttostr(segundo) else
+    secstr := inttostr(segundo);
+
+  secstr:=inttobin(strtoint(secstr[1]));
+
+  if length(secstr) < 4 then
+  repeat
+    secstr := '0' + secstr;
+  until length(secstr) = 4;
+
+  if secstr[1] = '1' then
+    ToggleBox13.Checked:=true else
+    ToggleBox13.Checked:=false;
+  if secstr[2] = '1' then
+    ToggleBox14.Checked:=true else
+    ToggleBox14.Checked:=false;
+  if secstr[3] = '1' then
+    ToggleBox15.Checked:=true else
+    ToggleBox15.Checked:=false;
+  if secstr[4] = '1' then
+    ToggleBox16.Checked:=true else
+    ToggleBox16.Checked:=false;
+
+  // Processa Segundo 2
+
+  if segundo < 9 then
+    secstr := '0' + inttostr(segundo) else
+    secstr := inttostr(segundo);
+
+  secstr:=inttobin(strtoint(secstr[2]));
+
+  if length(secstr) < 4 then
+  repeat
+    secstr := '0' + secstr;
+  until length(secstr) = 4;
+
+  if secstr[1] = '1' then
+    ToggleBox17.Checked:=true else
+    ToggleBox17.Checked:=false;
+  if secstr[2] = '1' then
+    ToggleBox18.Checked:=true else
+    ToggleBox18.Checked:=false;
+  if secstr[3] = '1' then
+    ToggleBox19.Checked:=true else
+    ToggleBox19.Checked:=false;
+  if secstr[4] = '1' then
+    ToggleBox20.Checked:=true else
+    ToggleBox20.Checked:=false;
 
 end;
 
