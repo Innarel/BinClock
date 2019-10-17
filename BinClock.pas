@@ -93,7 +93,7 @@ begin
 
   // Processa Minuto 1
 
-  if minuto < 9 then
+  if minuto <= 9 then
     minstr := '0' + inttostr(minuto) else
     minstr := inttostr(minuto);
 
