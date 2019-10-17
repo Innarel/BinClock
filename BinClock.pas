@@ -127,7 +127,7 @@ begin
 
   // Processa Minuto 2
 
-  if minuto < 9 then
+  if minuto <= 9 then
     minstr := '0' + inttostr(minuto) else
     minstr := inttostr(minuto);
 
@@ -153,7 +153,7 @@ begin
 
   // Processa Segundo 1
 
-  if segundo < 9 then
+  if segundo <= 9 then
     secstr := '0' + inttostr(segundo) else
     secstr := inttostr(segundo);
 
@@ -179,7 +179,7 @@ begin
 
   // Processa Segundo 2
 
-  if segundo < 9 then
+  if segundo <= 9 then
     secstr := '0' + inttostr(segundo) else
     secstr := inttostr(segundo);
 
