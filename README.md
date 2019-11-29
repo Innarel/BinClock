@@ -1,2 +1,2 @@
 # BinClock
-Binary Clock
+Binary Clock Pascal Delphi Lazarus
